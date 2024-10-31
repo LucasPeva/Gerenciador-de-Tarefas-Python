@@ -37,7 +37,7 @@ def main():
                 print('Tarefas pendentes')
 
             elif opcao == '4':
-                print('Tarefas concluídas')
+                listarTarefasConcluidas(tarefas)
 
             elif opcao == '5':
                 print('Tarefa removida')
