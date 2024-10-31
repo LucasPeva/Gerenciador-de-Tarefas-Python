@@ -1,8 +1,14 @@
+# Importa as funções necessárias para o programa, usa o wildcard pra manter os nomes
+# do arquivo funcoes.py
+from funcoes import *
+
 print('Gerenciador de tarefas em python.')
 print('Bem vindo!')
 
 def main():
     
+    # Variaveis globais
+    tarefas = [] # Placeholder pra armazenar as tarefas, dá um erro insano
 
     while True:
         print("\nEscolha uma opção:")
@@ -18,7 +24,10 @@ def main():
             opcao = int(input("> "))
         
             if opcao == '1':
-                print('Tarefa adicionada')
+                descricao = input("Descrição da tarefa: ")
+                prazo = input("Prazo (YYYY-MM-DD): ")
+                prioridade = input("Prioridade (alta, média, baixa): ")
+                adicionarTarefa(tarefas, descricao, prazo, prioridade)
 
             elif opcao == '2':
                 print('Tarefas concluidas')
