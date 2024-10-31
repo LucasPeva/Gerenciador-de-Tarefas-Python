@@ -28,3 +28,12 @@ def listarTarefasConcluidas(tarefas):
         if tarefa['concluida']:
             print(f"{i}: {tarefa['descricao']} (Prazo: {tarefa['prazo']}, Prioridade: {tarefa['prioridade']})")
 
+# Função: Listar tarefas pendentes
+# Lista as tarefas que tem a bool 'concluida' = False
+# Tá fora de ordem do main() pq eu fiz na ordem errada, ops
+
+def listarTarefasPendentes(tarefas):
+    print("\nTarefas Concluídas:")
+    for i, tarefa in enumerate(tarefas):
+        if not tarefa['concluida']:
+            print(f"{i}: {tarefa['descricao']} (Prazo: {tarefa['prazo']}, Prioridade: {tarefa['prioridade']})")
