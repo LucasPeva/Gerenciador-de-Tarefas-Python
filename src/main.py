@@ -8,7 +8,7 @@ print('Bem vindo!')
 def main():
     
     # Variaveis globais
-    tarefas = [] # Placeholder pra armazenar as tarefas, dá um erro insano
+    tarefas = {} # Placeholder pra armazenar as tarefas, talvez dá um erro insano
 
     while True:
         print("\nEscolha uma opção:")
@@ -30,7 +30,8 @@ def main():
                 adicionarTarefa(tarefas, descricao, prazo, prioridade)
 
             elif opcao == '2':
-                print('Tarefas concluidas')
+                indice = int(input("Índice da tarefa a ser marcada como concluída: "))
+                marcarConcluida(tarefas, indice)
 
             elif opcao == '3':
                 print('Tarefas pendentes')
