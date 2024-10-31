@@ -9,3 +9,12 @@ def adicionarTarefa(tarefas, descricao, prazo, prioridade):
         'concluida': False
     }
     tarefas.append(tarefa)
+
+# Função: Marcar tarefa como concluída
+# Atualiza a condição de conclusão da tarefa na lista
+
+def marcar_concluida(tarefas, indice):
+    if 0 <= indice < len(tarefas):
+        tarefas[indice]['concluida'] = True
+    else:
+        print("Índice inválido.")
