@@ -46,3 +46,12 @@ def removerTarefa(tarefas, indice):
         tarefas.pop(indice)
     else:
         print("Índice inválido.")
+        
+# Função para filtrar tarefas por prioridade
+# Recebe a prioridade e retorna as que tem prioridade igual
+
+def filtrarTarefasPorPrioridade(tarefas, prioridade):
+    print(f"\nTarefas com prioridade {prioridade}:")
+    for i, tarefa in enumerate(tarefas):
+        if tarefa['prioridade'] == prioridade:
+            print(f"{i}: {tarefa['descricao']} (Prazo: {tarefa['prazo']}, Concluída: {'Sim' if tarefa['concluida'] else 'Não'})")
