@@ -46,7 +46,8 @@ def main():
                 removerTarefa(tarefas, indice)
 
             elif opcao == '6':
-                print('Tarefas filtradas por prioridade')
+                prioridade = input("Digite a prioridade (alta, média, baixa): ")
+                filtrarTarefasPorPrioridade(tarefas, prioridade)
 
             elif opcao == '7':
                 print('Programa encerrado.')
