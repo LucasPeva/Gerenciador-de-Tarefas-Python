@@ -1,0 +1,53 @@
+print('Gerenciador de tarefas em python.')
+print('Bem vindo!')
+
+def main():
+    
+
+    while True:
+        print("\nEscolha uma opção:")
+        print("1. Adicionar Tarefa")
+        print("2. Marcar Tarefa como Concluída")
+        print("3. Listar Tarefas Pendentes")
+        print("4. Listar Tarefas Concluídas")
+        print("5. Remover Tarefa")
+        print("6. Filtrar Tarefas por Prioridade")
+        print("7. Sair")
+
+        try:
+            opcao = int(input("> "))
+        
+            if opcao == '1':
+                print('Tarefa adicionada')
+
+            elif opcao == '2':
+                print('Tarefas concluidas')
+
+            elif opcao == '3':
+                print('Tarefas pendentes')
+
+            elif opcao == '4':
+                print('Tarefas concluídas')
+
+            elif opcao == '5':
+                print('Tarefa removida')
+
+            elif opcao == '6':
+                print('Tarefas filtradas por prioridade')
+
+            elif opcao == '7':
+                print('Programa encerrado.')
+                break
+
+            else:
+                print('ERRO: Opção inválida. Tente novamente.')
+
+        except ValueError:
+            print('ERRO: Opção inválida. Tente novamente.')
+
+        except KeyboardInterrupt:
+            print('Programa encerrado.')
+            break
+
+if __name__ == '__main__':
+    main()
