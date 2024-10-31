@@ -34,7 +34,7 @@ def main():
                 marcarConcluida(tarefas, indice)
 
             elif opcao == '3':
-                print('Tarefas pendentes')
+                listarTarefasPendentes(tarefas)
 
             elif opcao == '4':
                 listarTarefasConcluidas(tarefas)
