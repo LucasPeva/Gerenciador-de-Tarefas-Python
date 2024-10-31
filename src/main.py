@@ -22,7 +22,7 @@ def main():
         print("7. Sair")
 
         try:
-            opcao = int(input("> "))
+            opcao = input("> ")
         
             if opcao == '1':
                 descricao = input("Descrição da tarefa: ")
