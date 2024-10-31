@@ -40,7 +40,10 @@ def main():
                 listarTarefasConcluidas(tarefas)
 
             elif opcao == '5':
-                print('Tarefa removida')
+                listarTarefasPendentes(tarefas)
+                listarTarefasConcluidas(tarefas) # Lista as tarefas pra ver qual remover
+                indice = int(input("Índice da tarefa a ser removida: "))
+                removerTarefa(tarefas, indice)
 
             elif opcao == '6':
                 print('Tarefas filtradas por prioridade')

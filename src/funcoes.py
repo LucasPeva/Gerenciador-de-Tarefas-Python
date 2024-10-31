@@ -37,3 +37,12 @@ def listarTarefasPendentes(tarefas):
     for i, tarefa in enumerate(tarefas):
         if not tarefa['concluida']:
             print(f"{i}: {tarefa['descricao']} (Prazo: {tarefa['prazo']}, Prioridade: {tarefa['prioridade']})")
+
+# Função: Remove uma tarefa
+# Pois é, isso mesmo
+
+def removerTarefa(tarefas, indice):
+    if 0 <= indice < len(tarefas):
+        tarefas.pop(indice)
+    else:
+        print("Índice inválido.")
