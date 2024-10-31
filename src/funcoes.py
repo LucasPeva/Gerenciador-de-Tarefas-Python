@@ -1,3 +1,5 @@
+import json # Para a persistência
+
 # Funcção: Adicionar tarefa
 # Adiciona uma tarefa nova a partir dos argumentos entreges
 
@@ -55,3 +57,19 @@ def filtrarTarefasPorPrioridade(tarefas, prioridade):
     for i, tarefa in enumerate(tarefas):
         if tarefa['prioridade'] == prioridade:
             print(f"{i}: {tarefa['descricao']} (Prazo: {tarefa['prazo']}, Concluída: {'Sim' if tarefa['concluida'] else 'Não'})")
+
+# Função para carregar tarefas de um arquivo JSON
+
+def carregarTarefas(arquivo):
+    try:
+        with open(arquivo, 'r') as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return []
+
+# Função para salvar tarefas em um arquivo JSON
+
+def salvarTarefas(arquivo, tarefas):
+    with open(arquivo, 'w') as f:
+        json.dump(tarefas, f, indent=4)
+

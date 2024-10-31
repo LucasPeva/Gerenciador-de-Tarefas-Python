@@ -8,7 +8,8 @@ print('Bem vindo!')
 def main():
     
     # Variaveis globais
-    tarefas = {} # Placeholder pra armazenar as tarefas, talvez dá um erro insano
+    arquivo = 'tarefas.json' # Arquivo de persistência
+    tarefas = carregarTarefas(arquivo)
 
     while True:
         print("\nEscolha uma opção:")
@@ -28,10 +29,13 @@ def main():
                 prazo = input("Prazo (YYYY-MM-DD): ")
                 prioridade = input("Prioridade (alta, média, baixa): ")
                 adicionarTarefa(tarefas, descricao, prazo, prioridade)
+                salvarTarefas(arquivo, tarefas)
 
             elif opcao == '2':
+                listarTarefasPendentes(tarefas)
                 indice = int(input("Índice da tarefa a ser marcada como concluída: "))
                 marcarConcluida(tarefas, indice)
+                salvarTarefas(arquivo,tarefas)
 
             elif opcao == '3':
                 listarTarefasPendentes(tarefas)
@@ -44,6 +48,7 @@ def main():
                 listarTarefasConcluidas(tarefas) # Lista as tarefas pra ver qual remover
                 indice = int(input("Índice da tarefa a ser removida: "))
                 removerTarefa(tarefas, indice)
+                salvarTarefas(arquivo,tarefas)
 
             elif opcao == '6':
                 prioridade = input("Digite a prioridade (alta, média, baixa): ")
@@ -51,6 +56,7 @@ def main():
 
             elif opcao == '7':
                 print('Programa encerrado.')
+                salvarTarefas(arquivo,tarefas)
                 break
 
             else:
@@ -61,7 +67,9 @@ def main():
 
         except KeyboardInterrupt:
             print('Programa encerrado.')
+            salvarTarefas(arquivo,tarefas)
             break
 
 if __name__ == '__main__':
     main()
+
